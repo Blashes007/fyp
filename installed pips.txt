@@ -1,0 +1,9 @@
+pip install django-responsive2
+pip install django-crispy-forms
+pip install pillow
+pip install pycryptodome
+
+py -m venv env
+.\env\Scripts\activate
+pnnffmbmzifmkwoe
+ 'np05cp4a180068@iic.edu.np'
