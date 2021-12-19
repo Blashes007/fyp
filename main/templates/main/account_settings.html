@@ -97,15 +97,16 @@
 		<div class="col-md-3 mt-2">
 			<div class="card">
 				<button type="button" class="btn" onclick="change('account_update')"
-					style="border-bottom: solid 1px #fff;"><a href="#detail">Update Profile</a></button>
+					style="border-bottom: solid 1px #fff;"><a href="#detail">प्रोफाइल अपडेट गर्नुहोस्</a></button>
 				<button type="button" class="btn" onclick="change('change_pass')"
-					style="border-bottom: solid 1px #fff;"><a href="#detail">Change Password</a></button>
+					style="border-bottom: solid 1px #fff;"><a href="#detail">पासवर्ड परिवर्तन गर्नुहोस्</a></button>
 			</div>
 		</div>
 		<div class="col-md-9 mt-2">
 			<!-- Update Details -->
 			<div class="card detail" id="account_update" style="display: block; padding: 10px;padding-bottom: 50px;">
-				<h4 class="ml-3 mt-2" style="color: #231f20; font-family: Comic Sans MS; display: inline;">Hello,
+				<h4 class="ml-3 mt-2" style="color: #231f20; font-family: Comic Sans MS; display: inline;">
+नमस्कार,
 					{{request.user.first_name}} {{request.user.last_name}}</h4><img
 					src="{{ request.user.userdetail.photo.url }}" style="float: right; height: 30px; width: 30px">
 				<hr class="mt-1 mb-0">
@@ -165,14 +166,15 @@
 						</div>
 					</div>
 					<section class="mr-1">
-						<button type="submit" class="sub_btn" style="float: right;">Update</button>
+						<button type="submit" class="sub_btn" style="float: right;">सम्पादन गर्नुहोस्</button>
 					</section>
 				</form>
 			</div>
 
 			<!-- Change Password -->
 			<div class="card detail" id="change_pass" style="display: none; padding-bottom: 40px">
-				<h4 class="ml-3 mt-2" style="color: #231f20; font-family: Comic Sans MS;">Change Password</h4>
+				<h4 class="ml-3 mt-2" style="color: #231f20; font-family: Comic Sans MS;">
+पासवर्ड परिवर्तन गर्नुहोस्</h4>
 				<hr class="mt-1 mb-0">
 				<form method="POST" class="signup_form mr-3 ml-3 mt-1" enctype="multipart/form-data">
 					{% csrf_token %}
@@ -180,8 +182,8 @@
 						{{ pass_change_form | crispy}}
 					</fieldset>
 					<section class="mt-1 mr-1 ml-1">
-						<button type="submit" class="sub_btn" style="float: right; width: 200px;">Change
-							Password</button>
+						<button type="submit" class="sub_btn" style="float: right; width: 200px;">
+पासवर्ड परिवर्तन गर्नुहोस्</button>
 					</section>
 				</form>
 			</div>

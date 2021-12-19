@@ -1,6 +1,10 @@
 from django.urls import path
 from . import views
-
+from django.urls import path
+class UsernameValidationView:
+    pass
+class EmailValidationView:
+    pass
 urlpatterns = [
     path('', views.index, name='home'),
     path('register/', views.register, name="signup"),
@@ -20,4 +24,5 @@ urlpatterns = [
     path('search/', views.search, name="search"),
     path('MenuFilter/<str:querys>', views.MenuFilter, name="MenuFilter"),
     path("handlerequest/", views.handlerequest, name="HandleRequest"),
-    ]
+
+]

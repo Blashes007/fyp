@@ -20,7 +20,7 @@
       </div>
     </div>
     {{ form.username| as_crispy_field }}
-    <p id="error_1_id_username" class="invalid-feedback" style="display: inline-block;"><strong id="usrerr"></strong>
+    <p id="error_1_id_username" class="invalid-feedback" style="display: inline-block;" ><strong id="usrerr"></strong>
     </p>
     <div class="form-row">
       <div class="form-group col-md-6 mb-0">
@@ -32,8 +32,8 @@
     </div>
   </fieldset>
   <section class="mt-4 mr-1 ml-1">
-    <button type="submit" id="disbtn1">Sign Up</button>
-    <small>Already Registered? &nbsp;<a href="{% url 'login' %}">Log In</a></small>
+    <button type="submit" id="disbtn1">साइनअप</button>
+    <small>पहिले नै दर्ता गरिएको छ? &nbsp;<a href="{% url 'login' %}">लग-इन</a></small>
   </section>
   <div class="subtitle pt-2 mt-1"></div>
 </form>
@@ -49,7 +49,7 @@
 
       return (true)
     }
-    document.getElementById('usrerr').innerText = "You have entered an invalid email address!"
+    document.getElementById('usrerr').innerText = "तपाईंले अवैध ईमेल ठेगाना प्रविष्ट गर्नुभयो।"
     document.getElementById('disbtn1').disabled = true;
 
     return (false)

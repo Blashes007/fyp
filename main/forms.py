@@ -5,14 +5,16 @@ from django.core.exceptions import ValidationError
 from .models import UserDetail
 
 class UserRegisterForm(UserCreationForm):
-	first_name = forms.CharField(widget=forms.TextInput(attrs={}))
-	last_name = forms.CharField(widget=forms.TextInput(attrs={}))
-	username = forms.CharField(label=("Mobile Number/Email"),widget=forms.TextInput(attrs={'oninput':'validate()'}))
-	password1 = forms.CharField(label=("Password"), strip=False, widget=forms.PasswordInput(attrs={}),)
-	password2  = forms.CharField(label=("Confirm"), strip=False, widget=forms.PasswordInput(attrs={}),)
+	first_name = forms.CharField(label= ("first_name"),widget=forms.TextInput(attrs={}))
+	last_name = forms.CharField(label= ("थार"),widget=forms.TextInput(attrs={}))
+	username = forms.CharField(label=("ईमेल"), widget=forms.TextInput(attrs={'oninput':'validate()'}))
+	password1 = forms.CharField(label=("पासवर्ड"), strip=False, widget=forms.PasswordInput(attrs={}),)
+	password2 = forms.CharField(label=("पुष्टि गर्नुहोस्"), strip=False, widget=forms.PasswordInput(attrs={}),)
 	class Meta:
 		model = User
 		fields = ['first_name', 'last_name', 'username', 'password1', 'password2']
+
+
 
 class UserUpdateForm(forms.ModelForm):
 	class Meta:

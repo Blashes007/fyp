@@ -9,14 +9,17 @@
 		{{form|crispy}}
 	</fieldset>
 	<section class="mt-4 mr-1 ml-1">
-		<button type="submit">Log In</button>
-		<small>Don't have an account? &nbsp;<a href="{% url 'signup' %}">Sign Up</a></small>
-		<small>Forgotten <a href="{% url 'password_reset' %}">Password</a></small>
+		<button type="submit">लग-इन</button>
+		<small>नयाँ सदस्य? दर्ता गर्नुहोस् यहाँ। &nbsp;<a href="{% url 'signup' %}">साइन अप</a></small>
+		<small>
+बिर्सनुभयो <a href="{% url 'password_reset' %}">
+पासवर्ड</a></small>
 
 	</section>
 	<div class="subtitle pt-2 mt-1"></div>
 </form>
 <script type="text/javascript">
-	document.getElementsByTagName('label')[0].innerText = 'Email/Mobile No.';
+	document.getElementsByTagName('label')[0].innerText = 'Email';
+
 </script>
 {% endblock body_account %}

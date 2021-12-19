@@ -7,3 +7,4 @@ py -m venv env
 .\env\Scripts\activate
 pnnffmbmzifmkwoe
  'np05cp4a180068@iic.edu.np'
+ python manage.py runserver

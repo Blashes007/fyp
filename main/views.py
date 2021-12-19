@@ -10,6 +10,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.views.decorators.csrf import csrf_exempt
 from .PayTm import Checksum
+from django.core.mail import send_mail
 
 
 
@@ -48,6 +49,7 @@ def index(request):
 	}
 	return render(request, 'main/index.html', params)
 
+
 def register(request):
 	if request.user.is_authenticated:
 		return redirect('home')
@@ -56,16 +58,29 @@ def register(request):
 			form = UserRegisterForm(request.POST)
 			if form.is_valid():
 				form.save();
+				html_message = '<h1><a href="http://127.0.0.1:8000/">Click here to activate your account</a></h1>'
+				send_mail(
+					'Account Activation',
+					'Please click here to Activate your account.',
+					'np05cp4a180068@iic.edu.np',
+					['np05cp4a180068@iic.edu.np'],
+					html_message=html_message,
+					fail_silently=False,
+				)
+
 				username = form.cleaned_data.get('username')
 				usr = User.objects.filter(username=username).first()
 				if username.isdigit():
 					UserDetail(user=usr,mobile=username).save()
 				else:
+
 					usr.email = username
 					usr.save()
 					UserDetail(user=usr).save()
 				messages.success(request, f'Account is Created for {username}')
 				return redirect('login')
+
+
 		else:
 			form = UserRegisterForm()
 	return render(request, 'main/signup.html', {'form':form, 'title':'Sign Up','category':category.objects.all()})

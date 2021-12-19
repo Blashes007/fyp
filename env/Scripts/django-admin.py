@@ -1,4 +1,4 @@
-#!c:\users\acer\onedrive\desktop\wrappers-india-online-master\env\scripts\python.exe
+#!c:\users\acer\onedrive\desktop\wrappers-nepal-online-master\env\scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

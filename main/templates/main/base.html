@@ -65,7 +65,7 @@
 			<div class="nav_links">
 				<a href="{% url 'home' %}" class="logo">cPrice</i></a>
 				<form class="form-inline my-2 my-lg-0 serch" action="/search">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search for Anything You Want"
+					<input class="form-control mr-sm-2" type="search" placeholder="तपाईले चाहानु भएको केहि खोज्नुहोस्"
 						aria-label="Search" name="query">
 					<button class="btn" type="submit" style="margin: 0;"><i class="fa fa-search"
 							aria-hidden="true"></i></button>
@@ -81,11 +81,12 @@
 					data-content="<a href='{% url 'myorders' %}'>My Order</a><br><a href='{% url 'account_settings' %}'>Account Settings</a>"><img
 						src="{{request.user.userdetail.photo.url}}"
 						style="height: 20px; width: 20px; border-radius: 10px; margin-right: 3px;">{{request.user.first_name}}</a>&nbsp;|
-				<a href="{% url 'logout' %}">Logout</a>
+				<a href="{% url 'logout' %}">लगआउट</a>&nbsp;|
+				<a href="/contact">सम्पर्क गर्नुहोस</a>
 				{% else %}
-				<a href="{% url 'login' %}">Login</a>&nbsp;|
-				<a href="{% url 'signup' %}">Register</a>&nbsp;|
-				<a href="{% url 'seller_signup' %}"></a>
+				<a href="{% url 'login' %}">लग-इन</a>&nbsp;|
+				<a href="{% url 'signup' %}">रेजिष्टर </a>&nbsp;|
+				<a href="/contact">सम्पर्क गर्नुहोस</a>
 				{% endif %}
 			</div>
 		</div>
@@ -108,12 +109,13 @@
 			</ul>
 		</div>
 		<section class="social_media">
-			<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/warriorbyborn/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
 			<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 			<a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
 			<a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-			<a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a> |
-			&copy; VAXOO
+			<a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+			<a href="{% url 'contact' %}">@VAXOO</a> ||
+
 		</section>
 	</header>
 	<a class="menu_bar"><i class="fa fa-bars" aria-hidden="true"></i></a>
